@@ -14,7 +14,7 @@
 static int var_vector = 4;
 static char *var_string = DRIVER_DESC;
 static int var_intArray[4] = { 1, 2,3,4 };
-static int arr_nump = 0;
+static int arr_nump = 2;
 
 /*  Like we do in main() with argc/argv, modules can take arguments using module_param(name,type, perm) macro defind in linux/moduleparam.h
  * @name:varilabe name used as exposed parameter
