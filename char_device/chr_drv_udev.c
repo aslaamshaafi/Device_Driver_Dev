@@ -12,7 +12,7 @@
 
 #define MAX_LENGTH 4000
 #define SUCCESS 0
-#define CHAR_DEV_NAME "First Char"
+#define CHAR_DEV_NAME "First_Char"
 #define LICENSE_TYPE "GPL"
 #define DRIVER_AUTHOR "Muhammad Aslam aslaam.shafee@gmail.com"
 #define DRIVER_DESC   "First Module"
@@ -56,7 +56,7 @@ static ssize_t char_dev_read(struct file *file,
 	else bytes_to_do = maxbytes;
 	
 	if( bytes_to_do == 0 ) {
-		printk("Reached end of device\n");
+		printk("READ: Reached end of device\n");
 		return -ENOSPC; /* Causes read() to return EOF */
 	}
 	
@@ -84,7 +84,7 @@ static ssize_t char_dev_write(struct file *file,
 	else bytes_to_do = maxbytes;
 
 	if( bytes_to_do == 0 ) {
-		printk("Reached end of device\n");
+		printk("Write: Reached end of device\n");
 		return -ENOSPC; /* Returns EOF at write() */
 	}
 

@@ -45,8 +45,8 @@ int main()
 	/* Write something into the buffer */
 	write( fd, "SAMS Solutions", 14);
 	
-	/* Set ppos to position 60 */
-	lseek( fd, 60, SEEK_SET );
+	/* Set ppos to position 40 */
+	lseek( fd, 40, SEEK_SET );
 	
 	/* read 70 characters and print */
 	read( fd, my_buf, 70 );
