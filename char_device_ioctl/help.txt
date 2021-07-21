@@ -1,0 +1,12 @@
+_IOC_TYPE(cmd) /*gets the magic number of the devicethis command targets*/
+_IOC_NR(  cmd) /*gets the sequential number of the command within your device*/
+_IOC_SIZE(cmd) /*gets the size of the data structure*/
+_IOC_DIR( cmd) /*gets the direction of data transfer,can be one of the following:
+_IOC_NONE_IOC_READ_IOC_WRITE_IOC_READ | _IOC_WRITE*/
+
+
+Helper macros:-
+IO(type,nr)– no arguments,
+IOR(type,nr,datatype)– read from device,
+IOW(type,nr,datatype)– write to device,
+IOWR(type,nr,datatype)– read and write,
