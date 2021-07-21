@@ -14,7 +14,7 @@ int main()
 	
 	unsigned int size;
 	char c;
-	char c_array[10]={1,2,3,4,5,6,7,8};	
+	char c_array[10]={'1','2','3','4','5','6','7','8'};	
 	
 	printf("[%d] - Opening device CharDev_ioctl\n", getpid() );
 
