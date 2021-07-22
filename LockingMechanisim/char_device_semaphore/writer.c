@@ -18,7 +18,7 @@ int main()
 
 	/* open the device for read/write/lseek */
 	printf("[%d] - Opening device tboost_cdrv\n", getpid() );
-	fd = open( "/dev/tboost_cdrv", O_RDWR );
+	fd = open( "/dev/First_Char", O_RDWR );
 	if( fd < 0 ) {
 		printf("Device could not be opened\n");
 		return 1;
@@ -31,7 +31,7 @@ int main()
 	printf("Bytes written %d\n", size);
 	bzero( my_message, 20 );
 	//lseek(fd,0,SEEK_SET);
-	read(fd, my_message, 20 );
+	read(fd, my_message, 40 );
 	printf("Written [%s] \n", my_message);
 	
 	/* Close the device */

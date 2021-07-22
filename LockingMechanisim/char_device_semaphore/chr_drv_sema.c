@@ -71,11 +71,11 @@ static ssize_t char_dev_read(struct file *file,
 
 	printk (KERN_INFO "process %i (%s) going to sleep\n", current->pid,current->comm);
 	/*(3) locked*/
-	if (down_interruptible (&mysem)) {
-        printk (KERN_INFO "process %i woken up by a signal\n", current->pid);
-        return -ERESTARTSYS;
-    }
-
+//	if (down_interruptible (&mysem)) {
+     //   printk (KERN_INFO "process %i woken up by a signal\n", current->pid);
+   //     return -ERESTARTSYS;
+  //  }
+	down(&mysem);
     printk (KERN_INFO "process %i (%s) resuming\n", current->pid,current->comm);
 
 	
@@ -119,7 +119,7 @@ static ssize_t char_dev_write(struct file *file,
 	         copy_from_user(char_device_buf + *ppos, /* to */
 				buf, /* from */
 				bytes_to_do ); /* how many bytes */
-	*ppos += nbytes;
+	// *ppos += nbytes;
 
 	ssleep(10);
 	printk (KERN_INFO "process %i (%s) wake up readers...\n",current->pid, current->comm);
