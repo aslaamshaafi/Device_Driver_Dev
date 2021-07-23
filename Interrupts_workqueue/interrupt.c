@@ -42,6 +42,7 @@ static irqreturn_t my_interrupt (int irq, void *dev_id)
 
 static int __init my_init (void)
 {
+   INIT_WORK(wq, t_fun);	
 	// (1)IRQ
     if (request_irq(irq, my_interrupt, IRQF_SHARED, "my_interrupt", &my_dev_id))
         return -1;
@@ -50,7 +51,6 @@ static int __init my_init (void)
     //struct work_data * data;
     //wq = create_workqueue("wq_test");	// dynamic way..there is static way (https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-kernel/)
     //data = kmalloc(sizeof(struct work_data), GFP_KERNEL);
-    INIT_WORK(wq, t_fun);
 	
 	schedule_work(wq);
    // queue_work(wq, &data->work);	
