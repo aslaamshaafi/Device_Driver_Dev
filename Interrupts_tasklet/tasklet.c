@@ -5,6 +5,9 @@
 #include <linux/init.h>
 #include "tasklet.h"
 
+#define LICENSE_TYPE "GPL"
+#define DRIVER_AUTHOR "Muhammad Aslam aslaam.shafee@gmail.com"
+#define DRIVER_DESC   "First Module"
 
 typedef struct simp_t {
 	int i;
@@ -40,3 +43,8 @@ static void __exit my_exit(void)
 
 module_init(my_init);
 module_exit(my_exit);
+// Following macros are definded in linux/module.h
+MODULE_LICENSE(LICENSE_TYPE); // It tell the license type since linux kernel is open source, we are definding our moduel as GPL
+MODULE_AUTHOR(DRIVER_AUTHOR);// use "Name <email>" or just "Name"
+MODULE_DESCRIPTION(DRIVER_DESC);// what is the function of module
+MODULE_SUPPORTED_DEVICE("sample_module"); // will decribe in the next examples
