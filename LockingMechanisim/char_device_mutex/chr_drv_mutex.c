@@ -223,7 +223,7 @@ static __init int char_dev_init(void)
 	}
 
 	tboost_class = class_create (THIS_MODULE, "VIRTUAL");
-        device_create (tboost_class, NULL, mydev, NULL, "%s", "tboost_cdrv");
+        device_create (tboost_class, NULL, mydev, NULL, "%s", CHAR_DEV_NAME);
 
 	printk(KERN_INFO"\nDevice Registered: %s\n",CHAR_DEV_NAME);
 	printk (KERN_INFO "Major number = %d, Minor number = %d\n", MAJOR (mydev),MINOR (mydev));
